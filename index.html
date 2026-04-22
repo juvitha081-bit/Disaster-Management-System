@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disaster Preparedness System</title>
+
+
+
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+
+<body>
+
+<header>
+<h1>Disaster Preparedness & Response Education System</h1>
+
+</header>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('awarness')">Awarness</button>
+<button onclick="showPage('alerts')">Location Alerts</button>
+<button onclick="showPage('report')">Report Emergency</button>
+<button onclick="showPage('checklist')">Preparedness Checklist</button>
+
+
+
+</nav>
+
+
+
+<section id="home" class="active">
+<div class="card">
+<h2>Welcome</h2>
+<p>This system helps students learn disaster safety and receive alerts based on their location.</p>
+
+<h3>Emergency Contacts</h3>
+
+<ul>
+<li>Fire: 101</li>
+<li>Ambulance: 102</li>
+<li>Police: 100</li>
+<li>Disaster Helpline: 108</li>
+</ul>
+
+</div>
+</section>
+
+<section id="awarness">
+
+<div class="card">
+<h2>Flood Safety</h2>
+<ul>
+<li>Stay updated with weather forecasts and warning messages.</li>
+<li>Avoid walking or driving through flooded roads.</li>
+<li>Move to higher ground immediately when water levels rise.</li>
+<li>Keep an emergency kit with water, food, medicines, flashlight, and important documents.</li>
+<li>Turn off electricity and gas supply if water enters the house.</li>
+<li>Follow evacuation instructions from authorities.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Earthquake Safety</h2>
+<ul>
+<li>Drop, Cover, and Hold On under a sturdy table or desk.</li>
+<li>Stay away from windows, mirrors, and heavy objects.</li>
+<li>Do not use elevators during an earthquake.</li>
+<li>If outdoors, move to an open area away from buildings, trees, and power lines.</li>
+<li>After the shaking stops, carefully exit the building and check for injuries.</li>
+<li>Be prepared for aftershocks.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Fire Safety</h2>
+<ul>
+<li>Install smoke alarms and fire extinguishers in buildings.</li>
+<li>Do not overload electrical sockets.</li>
+<li>Keep flammable materials away from heat sources.</li>
+<li>In case of fire, stay low to avoid smoke while escaping.</li>
+<li>Do not use elevators during a fire.</li>
+<li>Call emergency services immediately and evacuate the building</li>
+</ul>
+</div>
+
+</section>
+
+<section id="alerts">
+
+<div class="card">
+<h2>Location Based Disaster Alerts</h2>
+
+<button onclick="getLocation()">Check My Location</button>
+
+<p id="location"></p>
+
+
+<div id="alertBox"></div>
+
+
+
+
+</div>
+
+</section>
+
+<section id="report">
+
+<div class="card">
+<h2>Report Emergency</h2>
+
+<input type="text" id="name" placeholder="Your Name"><br><br>
+<input type="text" id="type" placeholder="Type of Disaster"><br><br>
+<textarea id="message" placeholder="Describe the situation"></textarea><br><br>
+
+<button onclick="submitReport()">Submit</button>
+
+<div id="reportStatus"></div>
+<div id="reportList"></div>
+
+<h3>Emergency Reports</h3>
+
+<button onclick="loadReports()">View Reports</button>
+
+<div id="reportList"></div>
+
+</div>
+
+</section>
+
+<section id="checklist">
+
+<div class="card">
+
+<h2>Emergency Preparedness Checklist</h2>
+
+<label><input type="checkbox"> First Aid Kit</label><br>
+<label><input type="checkbox"> Drinking Water</label><br>
+<label><input type="checkbox"> Emergency Food</label><br>
+<label><input type="checkbox"> Flashlight</label><br>
+<label><input type="checkbox"> Battery Radio</label><br>
+<label><input type="checkbox"> Important Documents</label><br>
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+<script src="{{url_for('static',filename='script.js')}}"></script>
+
+
+</body>
+</html>
